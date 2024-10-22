@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Eléctricos</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlaza con tu CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #fff; /* Blanco */
+            color: #333;
+        }
+        header {
+            position: relative;
+        }
+        .header-background {
+            background-color: white;
+            padding: 20px 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-top-line {
+            height: 5px;
+            background-color: #007BFF; /* Azul */
+        }
+        .header-bottom-line {
+            height: 5px;
+            background-color: #FF8C00; /* Naranja */
+        }
+        nav {
+            margin-right: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            background-color: #FF8C00; /* Naranja */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        section {
+            padding: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        .logo {
+            max-width: 50px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            margin-left: 20px;
+        }
+        .btn-whatsapp {
+            padding: 10px 20px;
+            background-color: #FF8C00; /* Naranja */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top-line"></div>
+        <div class="header-background">
+            <img src="tu-logo.jpg" alt="Logo" class="logo"> <!-- Cambia "tu-logo.jpg" por el nombre de tu imagen -->
+            <h1>Servicios Eléctricos [Tu Nombre]</h1>
+            <nav>
+                <ul>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#trabajos">Trabajos Realizados</a></li>
+                    <li><a href="#ubicacion">Ubicación</a></li>
+                    <li><a href="#zona-cobertura">Zona de Cobertura</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-bottom-line"></div>
+    </header>
+
+    <section id="sobre-mi">
+        <h2>Sobre Mí</h2>
+        <img src="tu-imagen.jpg" alt="Foto profesional">
+        <p>[Inserta aquí una breve descripción sobre tu experiencia y servicios]</p>
+    </section>
+
+    <section id="trabajos">
+        <h2>Trabajos Realizados</h2>
+        <ul>
+            <li>[Trabajo 1]: Descripción breve</li>
+            <li>[Trabajo 2]: Descripción breve</li>
+            <li>[Trabajo 3]: Descripción breve</li>
+            <!-- Agrega más trabajos según sea necesario -->
+        </ul>
+    </section>
+
+    <section id="ubicacion">
+        <h2>Ubicación</h2>
+        <p>[Descripción de tu ubicación o dirección]</p>
+    </section>
+
+    <section id="zona-cobertura">
+        <h2>Zona de Cobertura</h2>
+        <p>[Detalles sobre las áreas donde ofreces tus servicios]</p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Tienes alguna pregunta? ¡Contáctame por WhatsApp!</p>
+        <a href="https://wa.me/tu-numero" target="_blank" class="btn-whatsapp">
+            Enviar Mensaje por WhatsApp
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Servicios Eléctricos [Tu Nombre]. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
