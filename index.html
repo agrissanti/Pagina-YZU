@@ -3,141 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Eléctricos</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Enlaza con tu CSS -->
+    <title>Servicios Eléctricos Profesionales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            text-align: center;
-            background-color: #fff; /* Blanco */
+            background-color: #f4f4f4;
             color: #333;
         }
         header {
+            background-color: #002244; /* Azul marino */
+            color: white;
+            padding: 20px;
+            text-align: center;
             position: relative;
         }
-        .header-background {
-            background-color: white;
-            padding: 20px 0;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .header-top-line {
-            height: 5px;
-            background-color: #007BFF; /* Azul */
+        header img.logo {
+            max-width: 70px; /* Tamaño del logo */
+            margin-right: 20px;
         }
         .header-bottom-line {
             height: 5px;
-            background-color: #FF8C00; /* Naranja */
-        }
-        nav {
-            margin-right: 20px;
+            background-color: #FF8C00; /* Color de la línea inferior */
         }
         nav ul {
             list-style: none;
             padding: 0;
             display: flex;
+            justify-content: center;
+            margin-top: 20px;
         }
         nav ul li {
-            margin-left: 15px;
+            margin-left: 20px;
         }
         nav ul li a {
             text-decoration: none;
             color: white;
-            background-color: #FF8C00; /* Naranja */
-            padding: 5px 10px;
+            font-weight: 500;
+            padding: 10px 20px;
             border-radius: 5px;
+            background-color: #FF8C00; /* Color de los botones */
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #cc7000; /* Color del botón al pasar el mouse */
+        }
+        .hero {
+            height: 100vh; /* Altura de la sección hero */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4; /* Fondo gris claro */
+        }
+        .hero img {
+            max-width: 80%; /* Tamaño ajustado de la imagen */
+            height: auto;
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
         }
         section {
-            padding: 20px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+            margin-bottom: 40px;
+        }
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #002244; /* Color del título */
+            font-weight: 500;
+        }
+        section p, section ul {
+            font-size: 1.1em;
+            line-height: 1.6;
         }
         img {
-            max-width: 100%;
+            max-width: 100%; /* Imagenes responsivas */
             height: auto;
-            margin: 20px 0;
-        }
-        .logo {
-            max-width: 50px; /* Ajusta el tamaño de la imagen */
-            height: auto;
-            margin-left: 20px;
+            border-radius: 8px; /* Bordes redondeados */
+            margin-bottom: 20px; /* Margen inferior */
         }
         .btn-whatsapp {
+            display: inline-block;
             padding: 10px 20px;
-            background-color: #FF8C00; /* Naranja */
+            background-color: #25D366; /* Color del botón de WhatsApp */
             color: white;
-            border: none;
             border-radius: 5px;
-            cursor: pointer;
             text-decoration: none;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+        }
+        .btn-whatsapp:hover {
+            background-color: #1ebe57; /* Color al pasar el mouse */
         }
         footer {
-            background-color: #333;
+            background-color: #002244; /* Azul marino */
             color: white;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+        .trabajo {
+            margin-bottom: 40px; /* Margen entre trabajos */
+        }
+        .trabajo img {
+            max-width: 80%; /* Tamaño de las imágenes de trabajos */
+            height: auto;
+            display: block;
+            margin: 10px auto; /* Centrar las imágenes */
+        }
+        .trabajo h3 {
+            font-size: 1.5em; /* Tamaño del título del trabajo */
+            color: #333;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <div class="header-top-line"></div>
-        <div class="header-background">
-            <img src="tu-logo.jpg" alt="Logo" class="logo"> <!-- Cambia "tu-logo.jpg" por el nombre de tu imagen -->
-            <h1>Servicios Eléctricos [Tu Nombre]</h1>
-            <nav>
-                <ul>
-                    <li><a href="#sobre-mi">Sobre Mí</a></li>
-                    <li><a href="#trabajos">Trabajos Realizados</a></li>
-                    <li><a href="#ubicacion">Ubicación</a></li>
-                    <li><a href="#zona-cobertura">Zona de Cobertura</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
+        <img src="tu-logo.jpg" alt="Logo" class="logo"> <!-- Cambia "tu-logo.jpg" por el logo de la empresa -->
         <div class="header-bottom-line"></div>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="#sobre-mi">Sobre Mí</a></li>
+            <li><a href="#trabajos">Trabajos Realizados</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="#zona-cobertura">Zona de Cobertura</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección con la imagen principal (hero section) -->
+    <section class="hero">
+        <img src="imagen-principal.jpg" alt="Imagen principal de la empresa"> <!-- Imagen principal que representa la empresa -->
+    </section>
+
+    <!-- Sobre mí -->
     <section id="sobre-mi">
         <h2>Sobre Mí</h2>
-        <img src="tu-imagen.jpg" alt="Foto profesional">
+        <img src="tu-imagen.jpg" alt="Foto"> <!-- Imagen personal o profesional -->
         <p>[Inserta aquí una breve descripción sobre tu experiencia y servicios]</p>
     </section>
 
+    <!-- Trabajos realizados -->
     <section id="trabajos">
         <h2>Trabajos Realizados</h2>
-        <ul>
-            <li>[Trabajo 1]: Descripción breve</li>
-            <li>[Trabajo 2]: Descripción breve</li>
-            <li>[Trabajo 3]: Descripción breve</li>
-            <!-- Agrega más trabajos según sea necesario -->
-        </ul>
+
+        <!-- Trabajo 1 -->
+        <div class="trabajo">
+            <h3>[Trabajo 1]: Descripción breve</h3>
+            <img src="trabajo1-img1.jpg" alt="Trabajo 1 - Imagen 1"> <!-- Imagen del trabajo 1 -->
+            <img src="trabajo1-img2.jpg" alt="Trabajo 1 - Imagen 2"> <!-- Otra imagen del trabajo 1 -->
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+
+        <!-- Trabajo 2 -->
+        <div class="trabajo">
+            <h3>[Trabajo 2]: Descripción breve</h3>
+            <img src="trabajo2-img1.jpg" alt="Trabajo 2 - Imagen 1"> <!-- Imagen del trabajo 2 -->
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+
+        <!-- Trabajo 3 -->
+        <div class="trabajo">
+            <h3>[Trabajo 3]: Descripción breve</h3>
+            <img src="trabajo3-img1.jpg" alt="Trabajo 3 - Imagen 1"> <!-- Imagen del trabajo 3 -->
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+
     </section>
 
+    <!-- Ubicación -->
     <section id="ubicacion">
         <h2>Ubicación</h2>
         <p>[Descripción de tu ubicación o dirección]</p>
     </section>
 
+    <!-- Zona de cobertura -->
     <section id="zona-cobertura">
         <h2>Zona de Cobertura</h2>
         <p>[Detalles sobre las áreas donde ofreces tus servicios]</p>
     </section>
 
+    <!-- Contacto -->
     <section id="contacto">
         <h2>Contacto</h2>
         <p>¿Tienes alguna pregunta? ¡Contáctame por WhatsApp!</p>
-        <a href="https://wa.me/tu-numero" target="_blank" class="btn-whatsapp">
-            Enviar Mensaje por WhatsApp
-        </a>
+        <a href="https://wa.me/tu-numero" target="_blank" class="btn-whatsapp">Enviar Mensaje por WhatsApp</a> <!-- Botón para contacto por WhatsApp -->
     </section>
 
     <footer>
-        <p>&copy; 2024 Servicios Eléctricos [Tu Nombre]. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Servicios Eléctricos [Tu Nombre]. Todos los derechos reservados.</p> <!-- Pie de página -->
     </footer>
+
 </body>
 </html>
