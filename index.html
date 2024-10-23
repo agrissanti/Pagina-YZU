@@ -21,12 +21,12 @@
             position: relative;
         }
         header img.logo {
-            max-width: 70px; /* Tamaño del logo */
+            max-width: 70px; /* Tamaño máximo del logo */
             margin-right: 20px;
         }
         .header-bottom-line {
             height: 5px;
-            background-color: #FF8C00; /* Color de la línea inferior */
+            background-color: #FF8C00;
         }
         nav ul {
             list-style: none;
@@ -44,24 +44,25 @@
             font-weight: 500;
             padding: 10px 20px;
             border-radius: 5px;
-            background-color: #FF8C00; /* Color de los botones */
+            background-color: #FF8C00;
             transition: background-color 0.3s ease;
         }
         nav ul li a:hover {
-            background-color: #cc7000; /* Color del botón al pasar el mouse */
+            background-color: #cc7000;
         }
         .hero {
-            height: 100vh; /* Altura de la sección hero */
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f4f4f4; /* Fondo gris claro */
+            background-color: #f4f4f4;
         }
         .hero img {
-            max-width: 80%; /* Tamaño ajustado de la imagen */
+            max-width: 80%;
             height: auto;
-            border-radius: 8px; /* Bordes redondeados */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
         }
         section {
             padding: 60px 20px;
@@ -70,40 +71,46 @@
             text-align: left;
             background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 40px;
         }
         section h2 {
             font-size: 2em;
             margin-bottom: 20px;
-            color: #002244; /* Color del título */
+            color: #002244;
             font-weight: 500;
         }
         section p, section ul {
             font-size: 1.1em;
             line-height: 1.6;
         }
-        img {
-            max-width: 100%; /* Imagenes responsivas */
+        .img-editable {
+            width: 100%;
+            max-width: 600px;
             height: auto;
-            border-radius: 8px; /* Bordes redondeados */
-            margin-bottom: 20px; /* Margen inferior */
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         .btn-whatsapp {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #25D366; /* Color del botón de WhatsApp */
+            padding: 20px 40px; /* Tamaño aumentado del botón */
+            background-color: #25D366;
             color: white;
-            border-radius: 5px;
+            border-radius: 10px; /* Bordes más suaves */
             text-decoration: none;
+            font-size: 1.5em; /* Texto más grande */
+            font-weight: bold;
             transition: background-color 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .btn-whatsapp:hover {
-            background-color: #1ebe57; /* Color al pasar el mouse */
+            background-color: #1ebe57;
         }
         footer {
-            background-color: #002244; /* Azul marino */
+            background-color: #002244;
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -113,18 +120,95 @@
             font-size: 1em;
         }
         .trabajo {
-            margin-bottom: 40px; /* Margen entre trabajos */
+            margin-bottom: 40px;
         }
         .trabajo img {
-            max-width: 80%; /* Tamaño de las imágenes de trabajos */
+            width: 100%;
+            max-width: 80%;
             height: auto;
             display: block;
-            margin: 10px auto; /* Centrar las imágenes */
+            margin: 10px auto;
         }
         .trabajo h3 {
-            font-size: 1.5em; /* Tamaño del título del trabajo */
+            font-size: 1.5em;
             color: #333;
             margin-bottom: 10px;
+        }
+
+        /* Media Queries para pantallas pequeñas (móviles) */
+        @media (max-width: 768px) {
+            header img.logo {
+                max-width: 50px;
+                margin-right: 10px;
+            }
+            nav ul {
+                flex-direction: column;
+                padding: 0;
+            }
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+            nav ul li a {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero img {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+            section {
+                padding: 30px 15px;
+            }
+            section h2 {
+                font-size: 1.8em;
+            }
+            section p, section ul {
+                font-size: 1em;
+            }
+            .img-editable {
+                max-width: 100%;
+            }
+            .trabajo h3 {
+                font-size: 1.2em;
+            }
+            footer {
+                padding: 15px 0;
+            }
+        }
+
+        /* Media Queries para pantallas aún más pequeñas (teléfonos muy pequeños) */
+        @media (max-width: 480px) {
+            header {
+                padding: 15px;
+            }
+            header img.logo {
+                max-width: 40px;
+            }
+            nav ul {
+                padding: 0;
+            }
+            nav ul li a {
+                padding: 5px 10px;
+                font-size: 0.8em;
+            }
+            .hero img {
+                max-width: 100%;
+            }
+            section h2 {
+                font-size: 1.5em;
+            }
+            section p, section ul {
+                font-size: 0.9em;
+            }
+            .btn-whatsapp {
+                padding: 15px 30px; /* Ajusta el tamaño del botón en pantallas pequeñas */
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
@@ -147,13 +231,13 @@
 
     <!-- Sección con la imagen principal (hero section) -->
     <section class="hero">
-        <img src="imagen-principal.jpg" alt="Imagen principal de la empresa"> <!-- Imagen principal que representa la empresa -->
+        <img src="imagen-principal.jpg" alt="Imagen principal de la empresa" class="img-editable"> <!-- Imagen principal que representa la empresa -->
     </section>
 
     <!-- Sobre mí -->
     <section id="sobre-mi">
         <h2>Sobre Mí</h2>
-        <img src="tu-imagen.jpg" alt="Foto"> <!-- Imagen personal o profesional -->
+        <img src="tu-imagen.jpg" alt="Foto" class="img-editable"> <!-- Imagen personal o profesional -->
         <p>[Inserta aquí una breve descripción sobre tu experiencia y servicios]</p>
     </section>
 
@@ -164,25 +248,20 @@
         <!-- Trabajo 1 -->
         <div class="trabajo">
             <h3>[Trabajo 1]: Descripción breve</h3>
-            <img src="trabajo1-img1.jpg" alt="Trabajo 1 - Imagen 1"> <!-- Imagen del trabajo 1 -->
-            <img src="trabajo1-img2.jpg" alt="Trabajo 1 - Imagen 2"> <!-- Otra imagen del trabajo 1 -->
-            <!-- Agrega más imágenes según sea necesario -->
+            <img src="trabajo1-img1.jpg" alt="Trabajo 1 - Imagen 1" class="img-editable"> <!-- Imagen del trabajo 1 -->
         </div>
 
         <!-- Trabajo 2 -->
         <div class="trabajo">
             <h3>[Trabajo 2]: Descripción breve</h3>
-            <img src="trabajo2-img1.jpg" alt="Trabajo 2 - Imagen 1"> <!-- Imagen del trabajo 2 -->
-            <!-- Agrega más imágenes según sea necesario -->
+            <img src="trabajo2-img1.jpg" alt="Trabajo 2 - Imagen 1" class="img-editable"> <!-- Imagen del trabajo 2 -->
         </div>
 
         <!-- Trabajo 3 -->
         <div class="trabajo">
             <h3>[Trabajo 3]: Descripción breve</h3>
-            <img src="trabajo3-img1.jpg" alt="Trabajo 3 - Imagen 1"> <!-- Imagen del trabajo 3 -->
-            <!-- Agrega más imágenes según sea necesario -->
+            <img src="trabajo3-img1.jpg" alt="Trabajo 3 - Imagen 1" class="img-editable"> <!-- Imagen del trabajo 3 -->
         </div>
-
     </section>
 
     <!-- Ubicación -->
@@ -205,7 +284,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Servicios Eléctricos [Tu Nombre]. Todos los derechos reservados.</p> <!-- Pie de página -->
+        <p>&copy; 2024. Todos los derechos reservados.</p>
     </footer>
 
 </body>
