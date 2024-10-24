@@ -13,201 +13,222 @@
             background-color: #f4f4f4;
             color: #333;
         }
+
+        /* Estilo general */
         header {
             background-color: #002244; /* Azul marino */
             color: white;
             padding: 20px;
             text-align: center;
             position: relative;
+            z-index: 1; /* Para evitar que se superponga con otros elementos */
         }
+
         header img.logo {
-            max-width: 70px; /* Tamaño máximo del logo */
-            margin-right: 20px;
+            max-width: 60px; /* Tamaño máximo del logo */
         }
-        .header-bottom-line {
-            height: 5px;
-            background-color: #FF8C00;
+
+        nav {
+            background-color: #FF8C00; /* Color del fondo de los botones */
+            padding: 15px 0; /* Aumenta el espacio para separar de la banda azul */
+            z-index: 2; /* Asegura que los botones estén encima de la banda azul */
+            position: relative;
         }
+
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
             display: flex;
             justify-content: center;
-            margin-top: 20px;
         }
+
         nav ul li {
-            margin-left: 20px;
+            margin-left: 15px;
         }
+
         nav ul li a {
             text-decoration: none;
             color: white;
             font-weight: 500;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-radius: 5px;
             background-color: #FF8C00;
-            transition: background-color 0.3s ease;
+            position: relative;
+            z-index: 3; /* Asegura que el texto de los botones no se superponga */
         }
-        nav ul li a:hover {
-            background-color: #cc7000;
-        }
+
         .hero {
-            height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             background-color: #f4f4f4;
+            padding: 20px;
+            margin-top: 20px; /* Evitar superposición con la banda azul */
         }
+
         .hero img {
-            max-width: 80%;
+            width: 100%;
+            max-width: 90%; /* Imagen adaptable */
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 50px;
         }
+
         section {
-            padding: 60px 20px;
+            padding: 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
-            text-align: left;
+            text-align: center;
             background-color: white;
             border-radius: 8px;
+            margin-bottom: 30px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
+            position: relative;
+            z-index: 1; /* Se asegura de no estar superpuesto a botones */
         }
+
         section h2 {
-            font-size: 2em;
+            font-size: 1.8em;
             margin-bottom: 20px;
             color: #002244;
-            font-weight: 500;
         }
+
         section p, section ul {
             font-size: 1.1em;
             line-height: 1.6;
         }
+
+        /* Imágenes adaptables */
         .img-editable {
             width: 100%;
             max-width: 600px;
             height: auto;
-            border-radius: 8px;
             margin-bottom: 20px;
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
+
         .btn-whatsapp {
             display: inline-block;
-            padding: 20px 40px; /* Tamaño aumentado del botón */
+            padding: 15px 30px;
             background-color: #25D366;
             color: white;
-            border-radius: 10px; /* Bordes más suaves */
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 1.5em; /* Texto más grande */
+            font-size: 1.3em;
             font-weight: bold;
             transition: background-color 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            z-index: 10; /* Asegurarse de que el botón se vea correctamente */
+            position: relative;
         }
+
         .btn-whatsapp:hover {
             background-color: #1ebe57;
         }
+
         footer {
             background-color: #002244;
             color: white;
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
         }
+
         footer p {
             margin: 0;
-            font-size: 1em;
         }
+
         .trabajo {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
+
         .trabajo img {
             width: 100%;
             max-width: 80%;
             height: auto;
             display: block;
-            margin: 10px auto;
+            margin: 0 auto;
         }
+
         .trabajo h3 {
             font-size: 1.5em;
             color: #333;
             margin-bottom: 10px;
         }
 
-        /* Media Queries para pantallas pequeñas (móviles) */
+        /* Media Queries para móviles */
         @media (max-width: 768px) {
-            header img.logo {
-                max-width: 50px;
-                margin-right: 10px;
-            }
             nav ul {
                 flex-direction: column;
-                padding: 0;
             }
+
             nav ul li {
                 margin-left: 0;
                 margin-bottom: 10px;
             }
-            nav ul li a {
-                padding: 8px 15px;
-                font-size: 0.9em;
-            }
+
             .hero {
-                flex-direction: column;
-                text-align: center;
+                padding: 20px 10px;
             }
-            .hero img {
-                max-width: 100%;
-                margin-top: 20px;
-            }
+
             section {
                 padding: 30px 15px;
             }
+
             section h2 {
-                font-size: 1.8em;
+                font-size: 1.6em;
             }
+
             section p, section ul {
                 font-size: 1em;
             }
+
             .img-editable {
                 max-width: 100%;
             }
+
             .trabajo h3 {
                 font-size: 1.2em;
             }
-            footer {
-                padding: 15px 0;
+
+            .btn-whatsapp {
+                padding: 15px 25px;
+                font-size: 1.2em;
             }
         }
 
-        /* Media Queries para pantallas aún más pequeñas (teléfonos muy pequeños) */
+        /* Media Queries para teléfonos muy pequeños */
         @media (max-width: 480px) {
             header {
-                padding: 15px;
+                padding: 10px;
             }
+
             header img.logo {
                 max-width: 40px;
             }
-            nav ul {
-                padding: 0;
-            }
+
             nav ul li a {
-                padding: 5px 10px;
-                font-size: 0.8em;
+                padding: 8px 10px;
+                font-size: 0.9em;
             }
-            .hero img {
-                max-width: 100%;
-            }
+
             section h2 {
-                font-size: 1.5em;
+                font-size: 1.4em;
             }
+
             section p, section ul {
                 font-size: 0.9em;
             }
+
             .btn-whatsapp {
-                padding: 15px 30px; /* Ajusta el tamaño del botón en pantallas pequeñas */
-                font-size: 1.2em;
+                padding: 12px 20px;
+                font-size: 1.1em;
+            }
+
+            footer {
+                padding: 15px;
             }
         }
     </style>
@@ -216,7 +237,6 @@
 
     <header>
         <img src="tu-logo.jpg" alt="Logo" class="logo"> <!-- Cambia "tu-logo.jpg" por el logo de la empresa -->
-        <div class="header-bottom-line"></div>
     </header>
 
     <nav>
@@ -231,7 +251,7 @@
 
     <!-- Sección con la imagen principal (hero section) -->
     <section class="hero">
-        <img src="imagen-principal.jpg" alt="Imagen principal de la empresa" class="img-editable"> <!-- Imagen principal que representa la empresa -->
+        <img src="imagen-principal.jpg" alt="Imagen principal de la empresa" class="img-editable"> <!-- Imagen principal -->
     </section>
 
     <!-- Sobre mí -->
@@ -270,13 +290,13 @@
         <p>[Descripción de tu ubicación o dirección]</p>
     </section>
 
-    <!-- Zona de cobertura -->
+    <!-- Zona de Cobertura -->
     <section id="zona-cobertura">
         <h2>Zona de Cobertura</h2>
         <p>[Detalles sobre las áreas donde ofreces tus servicios]</p>
     </section>
 
-    <!-- Contacto -->
+    <!-- Sección de contacto con botón de WhatsApp -->
     <section id="contacto">
         <h2>Contacto</h2>
         <p>¿Tienes alguna pregunta? ¡Contáctame por WhatsApp!</p>
