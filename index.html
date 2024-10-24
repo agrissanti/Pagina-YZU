@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Eléctricos Profesionales</title>
+    <title>Servicios Eléctricos</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -21,17 +21,17 @@
             padding: 20px;
             text-align: center;
             position: relative;
-            z-index: 1; /* Para evitar que se superponga con otros elementos */
+            z-index: 1;
         }
 
         header img.logo {
-            max-width: 60px; /* Tamaño máximo del logo */
+            max-width: 60px;
         }
 
         nav {
             background-color: #FF8C00; /* Color del fondo de los botones */
-            padding: 15px 0; /* Aumenta el espacio para separar de la banda azul */
-            z-index: 2; /* Asegura que los botones estén encima de la banda azul */
+            padding: 15px 0;
+            z-index: 2;
             position: relative;
         }
 
@@ -54,8 +54,6 @@
             padding: 10px 15px;
             border-radius: 5px;
             background-color: #FF8C00;
-            position: relative;
-            z-index: 3; /* Asegura que el texto de los botones no se superponga */
         }
 
         .hero {
@@ -64,12 +62,12 @@
             align-items: center;
             background-color: #f4f4f4;
             padding: 20px;
-            margin-top: 20px; /* Evitar superposición con la banda azul */
+            margin-top: 20px;
         }
 
         .hero img {
             width: 100%;
-            max-width: 90%; /* Imagen adaptable */
+            max-width: 90%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -84,8 +82,6 @@
             border-radius: 8px;
             margin-bottom: 30px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1; /* Se asegura de no estar superpuesto a botones */
         }
 
         section h2 {
@@ -121,7 +117,7 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
             margin-top: 20px;
-            z-index: 10; /* Asegurarse de que el botón se vea correctamente */
+            z-index: 10;
             position: relative;
         }
 
@@ -140,57 +136,49 @@
             margin: 0;
         }
 
-        .trabajo {
-            margin-bottom: 30px;
+        /* Diferenciación de títulos y descripciones de los trabajos */
+        .trabajo h3 {
+            font-size: 1.5em;
+            color: #002244;
+            margin-bottom: 10px;
         }
 
+        .trabajo p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Múltiples fotos por trabajo */
         .trabajo img {
             width: 100%;
             max-width: 80%;
             height: auto;
+            margin: 10px auto;
             display: block;
-            margin: 0 auto;
         }
 
-        .trabajo h3 {
-            font-size: 1.5em;
-            color: #333;
-            margin-bottom: 10px;
+        /* Sección de ubicación y cobertura con fotos */
+        .ubicacion img, .zona-cobertura img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         /* Media Queries para móviles */
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
+                align-items: center;
             }
 
             nav ul li {
                 margin-left: 0;
                 margin-bottom: 10px;
-            }
-
-            .hero {
-                padding: 20px 10px;
-            }
-
-            section {
-                padding: 30px 15px;
-            }
-
-            section h2 {
-                font-size: 1.6em;
-            }
-
-            section p, section ul {
-                font-size: 1em;
-            }
-
-            .img-editable {
-                max-width: 100%;
-            }
-
-            .trabajo h3 {
-                font-size: 1.2em;
             }
 
             .btn-whatsapp {
@@ -199,7 +187,6 @@
             }
         }
 
-        /* Media Queries para teléfonos muy pequeños */
         @media (max-width: 480px) {
             header {
                 padding: 10px;
@@ -214,21 +201,17 @@
                 font-size: 0.9em;
             }
 
-            section h2 {
-                font-size: 1.4em;
-            }
-
-            section p, section ul {
-                font-size: 0.9em;
-            }
-
             .btn-whatsapp {
                 padding: 12px 20px;
                 font-size: 1.1em;
             }
 
-            footer {
-                padding: 15px;
+            .trabajo h3 {
+                font-size: 1.2em;
+            }
+
+            .trabajo p {
+                font-size: 1em;
             }
         }
     </style>
@@ -249,7 +232,7 @@
         </ul>
     </nav>
 
-    <!-- Sección con la imagen principal (hero section) -->
+    <!-- Sección con la imagen principal -->
     <section class="hero">
         <img src="imagen-principal.jpg" alt="Imagen principal de la empresa" class="img-editable"> <!-- Imagen principal -->
     </section>
@@ -267,33 +250,39 @@
 
         <!-- Trabajo 1 -->
         <div class="trabajo">
-            <h3>[Trabajo 1]: Descripción breve</h3>
-            <img src="trabajo1-img1.jpg" alt="Trabajo 1 - Imagen 1" class="img-editable"> <!-- Imagen del trabajo 1 -->
+            <h3>[Trabajo 1]</h3>
+            <p>Descripción breve del trabajo realizado.</p>
+            <img src="trabajo1-img1.jpg" alt="Trabajo 1 - Imagen 1" class="img-editable"> <!-- Primera imagen del trabajo 1 -->
+            <img src="trabajo1-img2.jpg" alt="Trabajo 1 - Imagen 2" class="img-editable"> <!-- Segunda imagen del trabajo 1 -->
         </div>
 
         <!-- Trabajo 2 -->
         <div class="trabajo">
-            <h3>[Trabajo 2]: Descripción breve</h3>
-            <img src="trabajo2-img1.jpg" alt="Trabajo 2 - Imagen 1" class="img-editable"> <!-- Imagen del trabajo 2 -->
+            <h3>[Trabajo 2]</h3>
+            <p>Descripción breve del trabajo realizado.</p>
+            <img src="trabajo2-img1.jpg" alt="Trabajo 2 - Imagen 1" class="img-editable"> <!-- Primera imagen del trabajo 2 -->
+            <img src="trabajo2-img2.jpg" alt="Trabajo 2 - Imagen 2" class="img-editable"> <!-- Segunda imagen del trabajo 2 -->
         </div>
 
         <!-- Trabajo 3 -->
         <div class="trabajo">
-            <h3>[Trabajo 3]: Descripción breve</h3>
-            <img src="trabajo3-img1.jpg" alt="Trabajo 3 - Imagen 1" class="img-editable"> <!-- Imagen del trabajo 3 -->
+            <h3>[Trabajo 3]</h3>
+            <p>Descripción breve del trabajo realizado.</p>
+            <img src="trabajo3-img1.jpg" alt="Trabajo 3 - Imagen 1" class="img-editable"> <!-- Primera imagen del trabajo 3 -->
+            <img src="trabajo3-img2.jpg" alt="Trabajo 3 - Imagen 2" class="img-editable"> <!-- Segunda imagen del trabajo 3 -->
         </div>
     </section>
 
-    <!-- Ubicación -->
+    <!-- Ubicación con foto -->
     <section id="ubicacion">
         <h2>Ubicación</h2>
-        <p>[Descripción de tu ubicación o dirección]</p>
+        <img src="ubicacion-img.jpg" alt="Foto de la ubicación" class="img-editable"> <!-- Foto de la ubicación -->
     </section>
 
-    <!-- Zona de Cobertura -->
+    <!-- Zona de Cobertura con foto -->
     <section id="zona-cobertura">
         <h2>Zona de Cobertura</h2>
-        <p>[Detalles sobre las áreas donde ofreces tus servicios]</p>
+        <img src="zona-cobertura-img.jpg" alt="Foto de la zona de cobertura" class="img-editable"> <!-- Foto de la zona de cobertura -->
     </section>
 
     <!-- Sección de contacto con botón de WhatsApp -->
@@ -309,4 +298,3 @@
 
 </body>
 </html>
-
