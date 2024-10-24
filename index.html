@@ -14,7 +14,6 @@
             color: #333;
         }
 
-        /* Estilo general */
         header {
             background-color: #002244; /* Azul marino */
             color: white;
@@ -28,10 +27,10 @@
             max-width: 60px;
         }
 
+        /* Menú desplegable */
         nav {
             background-color: #FF8C00; /* Color del fondo de los botones */
             padding: 15px 0;
-            z-index: 2;
             position: relative;
         }
 
@@ -39,12 +38,13 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex;
-            justify-content: center;
+            display: none;
+            flex-direction: column;
+            text-align: center;
         }
 
         nav ul li {
-            margin-left: 15px;
+            margin-bottom: 10px;
         }
 
         nav ul li a {
@@ -56,16 +56,30 @@
             background-color: #FF8C00;
         }
 
+        .menu-toggle {
+            display: block;
+            background-color: #FF8C00;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .menu-toggle:hover {
+            background-color: #ff751a;
+        }
+
+        /* Imagen principal centrada */
         .hero {
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #f4f4f4;
             padding: 20px;
-            margin-top: 20px;
         }
 
-        /* Imagen principal adaptada a móviles */
         .hero img {
             width: 100%;
             max-width: 1200px;
@@ -91,20 +105,13 @@
             color: #002244;
         }
 
-        section p, section ul {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-
-        /* Imágenes centradas y ajustables */
+        /* Imágenes centradas */
         .img-editable {
             width: 100%;
             max-width: 600px;
             height: auto;
-            margin-bottom: 20px;
+            margin: 20px auto;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .btn-whatsapp {
@@ -118,8 +125,6 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
             margin-top: 20px;
-            z-index: 10;
-            position: relative;
         }
 
         .btn-whatsapp:hover {
@@ -137,7 +142,6 @@
             margin: 0;
         }
 
-        /* Diferenciación de títulos y descripciones de los trabajos */
         .trabajo h3 {
             font-size: 1.5em;
             color: #002244;
@@ -150,7 +154,6 @@
             margin-bottom: 15px;
         }
 
-        /* Múltiples fotos por trabajo */
         .trabajo img {
             width: 100%;
             max-width: 80%;
@@ -159,7 +162,6 @@
             display: block;
         }
 
-        /* Sección de ubicación y cobertura con fotos centradas */
         .ubicacion img, .zona-cobertura img {
             width: 100%;
             max-width: 500px;
@@ -170,56 +172,14 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Media Queries para móviles */
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             nav ul {
-                flex-direction: column;
-                align-items: center;
+                display: flex;
+                justify-content: center;
             }
 
-            nav ul li {
-                margin-left: 0;
-                margin-bottom: 10px;
-            }
-
-            .btn-whatsapp {
-                padding: 15px 25px;
-                font-size: 1.2em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
-                padding: 10px;
-            }
-
-            header img.logo {
-                max-width: 40px;
-            }
-
-            nav ul li a {
-                padding: 8px 10px;
-                font-size: 0.9em;
-            }
-
-            .btn-whatsapp {
-                padding: 12px 20px;
-                font-size: 1.1em;
-            }
-
-            .trabajo h3 {
-                font-size: 1.2em;
-            }
-
-            .trabajo p {
-                font-size: 1em;
-            }
-
-            /* Ajuste para la imagen principal en móviles */
-            .hero img {
-                max-width: 100%;
-                height: auto;
-                margin: 0 auto;
+            .menu-toggle {
+                display: none;
             }
         }
     </style>
@@ -230,7 +190,9 @@
         <img src="tu-logo.jpg" alt="Logo" class="logo"> <!-- Cambia "tu-logo.jpg" por el logo de la empresa -->
     </header>
 
+    <!-- Menú desplegable -->
     <nav>
+        <div class="menu-toggle">Menú</div>
         <ul>
             <li><a href="#sobre-mi">Sobre Mí</a></li>
             <li><a href="#trabajos">Trabajos Realizados</a></li>
@@ -239,6 +201,18 @@
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
+
+    <!-- Script para menú desplegable -->
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            var menu = document.querySelector('nav ul');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        });
+    </script>
 
     <!-- Sección con la imagen principal -->
     <section class="hero">
@@ -261,7 +235,6 @@
             <h3>[Trabajo 1]</h3>
             <p>Descripción breve del trabajo realizado.</p>
             <img src="trabajo1-img1.jpg" alt="Trabajo 1 - Imagen 1" class="img-editable"> <!-- Primera imagen del trabajo 1 -->
-            <img src="trabajo1-img2.jpg" alt="Trabajo 1 - Imagen 2" class="img-editable"> <!-- Segunda imagen del trabajo 1 -->
         </div>
 
         <!-- Trabajo 2 -->
@@ -269,15 +242,6 @@
             <h3>[Trabajo 2]</h3>
             <p>Descripción breve del trabajo realizado.</p>
             <img src="trabajo2-img1.jpg" alt="Trabajo 2 - Imagen 1" class="img-editable"> <!-- Primera imagen del trabajo 2 -->
-            <img src="trabajo2-img2.jpg" alt="Trabajo 2 - Imagen 2" class="img-editable"> <!-- Segunda imagen del trabajo 2 -->
-        </div>
-
-        <!-- Trabajo 3 -->
-        <div class="trabajo">
-            <h3>[Trabajo 3]</h3>
-            <p>Descripción breve del trabajo realizado.</p>
-            <img src="trabajo3-img1.jpg" alt="Trabajo 3 - Imagen 1" class="img-editable"> <!-- Primera imagen del trabajo 3 -->
-            <img src="trabajo3-img2.jpg" alt="Trabajo 3 - Imagen 2" class="img-editable"> <!-- Segunda imagen del trabajo 3 -->
         </div>
     </section>
 
