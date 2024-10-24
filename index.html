@@ -27,24 +27,25 @@
             max-width: 60px;
         }
 
-        /* Menú desplegable */
+        /* Menú horizontal */
         nav {
             background-color: #FF8C00; /* Color del fondo de los botones */
             padding: 15px 0;
             position: relative;
+            display: flex;
+            justify-content: center; /* Botones alineados horizontalmente */
         }
 
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: none;
-            flex-direction: column;
-            text-align: center;
+            display: flex;
+            justify-content: center;
         }
 
         nav ul li {
-            margin-bottom: 10px;
+            margin: 0 15px;
         }
 
         nav ul li a {
@@ -56,18 +57,7 @@
             background-color: #FF8C00;
         }
 
-        .menu-toggle {
-            display: block;
-            background-color: #FF8C00;
-            color: white;
-            padding: 10px 15px;
-            text-align: center;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .menu-toggle:hover {
+        nav ul li a:hover {
             background-color: #ff751a;
         }
 
@@ -172,16 +162,17 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
             nav ul {
-                display: flex;
-                justify-content: center;
+                flex-direction: column; /* Adaptación para móviles */
+                align-items: center;
             }
 
-            .menu-toggle {
-                display: none;
+            nav ul li {
+                margin-bottom: 10px;
             }
         }
+
     </style>
 </head>
 <body>
@@ -190,9 +181,8 @@
         <img src="tu-logo.jpg" alt="Logo" class="logo"> <!-- Cambia "tu-logo.jpg" por el logo de la empresa -->
     </header>
 
-    <!-- Menú desplegable -->
+    <!-- Menú horizontal -->
     <nav>
-        <div class="menu-toggle">Menú</div>
         <ul>
             <li><a href="#sobre-mi">Sobre Mí</a></li>
             <li><a href="#trabajos">Trabajos Realizados</a></li>
@@ -201,18 +191,6 @@
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
-
-    <!-- Script para menú desplegable -->
-    <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            var menu = document.querySelector('nav ul');
-            if (menu.style.display === 'flex') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'flex';
-            }
-        });
-    </script>
 
     <!-- Sección con la imagen principal -->
     <section class="hero">
@@ -270,3 +248,4 @@
 
 </body>
 </html>
+
