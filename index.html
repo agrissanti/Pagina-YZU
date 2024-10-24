@@ -65,9 +65,10 @@
             margin-top: 20px;
         }
 
+        /* Imagen principal adaptada a móviles */
         .hero img {
             width: 100%;
-            max-width: 90%;
+            max-width: 1200px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -95,7 +96,7 @@
             line-height: 1.6;
         }
 
-        /* Imágenes adaptables */
+        /* Imágenes centradas y ajustables */
         .img-editable {
             width: 100%;
             max-width: 600px;
@@ -158,7 +159,7 @@
             display: block;
         }
 
-        /* Sección de ubicación y cobertura con fotos */
+        /* Sección de ubicación y cobertura con fotos centradas */
         .ubicacion img, .zona-cobertura img {
             width: 100%;
             max-width: 500px;
@@ -212,6 +213,13 @@
 
             .trabajo p {
                 font-size: 1em;
+            }
+
+            /* Ajuste para la imagen principal en móviles */
+            .hero img {
+                max-width: 100%;
+                height: auto;
+                margin: 0 auto;
             }
         }
     </style>
