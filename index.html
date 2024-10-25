@@ -12,28 +12,21 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            text-align: center;
         }
 
         header {
-            background-color: #002244; /* Azul marino */
+            background-color: #002244;
             color: white;
             padding: 20px;
             text-align: center;
-            position: relative;
-            z-index: 1;
         }
 
-        header img.logo {
-            max-width: 60px;
-        }
-
-        /* Menú horizontal */
         nav {
-            background-color: #FF8C00; /* Color del fondo de los botones */
+            background-color: #FF8C00;
             padding: 15px 0;
-            position: relative;
             display: flex;
-            justify-content: center; /* Botones alineados horizontalmente */
+            justify-content: center;
         }
 
         nav ul {
@@ -41,7 +34,6 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center;
         }
 
         nav ul li {
@@ -54,20 +46,14 @@
             font-weight: 500;
             padding: 10px 15px;
             border-radius: 5px;
-            background-color: #FF8C00;
         }
 
-        nav ul li a:hover {
-            background-color: #ff751a;
-        }
-
-        /* Imagen principal centrada */
+        /* Sección de Inicio */
         .hero {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f4f4f4;
-            padding: 20px;
+            padding: 40px 0;
         }
 
         .hero img {
@@ -78,98 +64,153 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
+        /* Estilo general para secciones */
         section {
-            padding: 40px 20px;
             max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
+            margin: 0 auto 30px;
+            padding: 40px 20px;
             background-color: white;
             border-radius: 8px;
-            margin-bottom: 30px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        section h2 {
-            font-size: 1.8em;
+        /* Servicios */
+        #servicios h2 {
+            font-size: 2em;
             margin-bottom: 20px;
             color: #002244;
+            text-align: center;
         }
 
-        /* Imágenes centradas */
-        .img-editable {
+        .servicios-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .servicio-img {
+            width: auto;
+            height: auto;
+            max-width: 500px;
+            border-radius: 8px;
+            margin-right: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carrusel {
+            max-width: 500px;
             width: 100%;
-            max-width: 600px;
+            position: relative;
+            text-align: center;
+        }
+
+        .carrusel img {
+            width: 100%;
+            height: 300px; /* Tamaño fijo para todas las imágenes */
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carrusel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .carrusel-controls button {
+            background-color: transparent;
+            border: none;
+            color: #002244;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .carrusel-info {
+            font-size: 1em;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* Sección de Nosotros */
+        #nosotros img {
+            width: 100%;
+            max-width: 1200px;
             height: auto;
             margin: 20px auto;
             display: block;
-        }
-
-        .btn-whatsapp {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1.3em;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #1ebe57;
-        }
-
-        footer {
-            background-color: #002244;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        .trabajo h3 {
-            font-size: 1.5em;
-            color: #002244;
-            margin-bottom: 10px;
-        }
-
-        .trabajo p {
-            font-size: 1.1em;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .trabajo img {
-            width: 100%;
-            max-width: 80%;
-            height: auto;
-            margin: 10px auto;
-            display: block;
-        }
-
-        .ubicacion img, .zona-cobertura img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            margin: 0 auto;
-            display: block;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
+        /* Sección de Comentarios */
+        #comentarios form input[type="text"], #comentarios form textarea {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-width: 400px;
+            display: block;
+            margin: 5px auto;
+        }
+
+        .comentarios {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .comentarios .comentario {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .whatsapp-float img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Adaptación para móviles */
         @media (max-width: 768px) {
             nav ul {
-                flex-direction: column; /* Adaptación para móviles */
+                flex-direction: column;
                 align-items: center;
             }
 
             nav ul li {
                 margin-bottom: 10px;
+            }
+
+            .servicios-content {
+                flex-direction: column;
+            }
+
+            .servicio-img, .carrusel {
+                max-width: 100%;
             }
         }
 
@@ -184,68 +225,89 @@
     <!-- Menú horizontal -->
     <nav>
         <ul>
-            <li><a href="#sobre-mi">Sobre Mí</a></li>
-            <li><a href="#trabajos">Trabajos Realizados</a></li>
-            <li><a href="#ubicacion">Ubicación</a></li>
-            <li><a href="#zona-cobertura">Zona de Cobertura</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#cobertura">Cobertura</a></li>
+            <li><a href="#comentarios">Comentarios</a></li>
         </ul>
     </nav>
 
-    <!-- Sección con la imagen principal -->
-    <section class="hero">
+    <!-- Imagen principal centrada -->
+    <section id="inicio" class="hero">
         <img src="imagen-principal.jpg" alt="Imagen principal de la empresa" class="img-editable"> <!-- Imagen principal -->
     </section>
 
-    <!-- Sobre mí -->
-    <section id="sobre-mi">
-        <h2>Sobre Mí</h2>
-        <img src="tu-imagen.jpg" alt="Foto" class="img-editable"> <!-- Imagen personal o profesional -->
-        <p>[Inserta aquí una breve descripción sobre tu experiencia y servicios]</p>
-    </section>
-
-    <!-- Trabajos realizados -->
-    <section id="trabajos">
-        <h2>Trabajos Realizados</h2>
-
-        <!-- Trabajo 1 -->
-        <div class="trabajo">
-            <h3>[Trabajo 1]</h3>
-            <p>Descripción breve del trabajo realizado.</p>
-            <img src="trabajo1-img1.jpg" alt="Trabajo 1 - Imagen 1" class="img-editable"> <!-- Primera imagen del trabajo 1 -->
-        </div>
-
-        <!-- Trabajo 2 -->
-        <div class="trabajo">
-            <h3>[Trabajo 2]</h3>
-            <p>Descripción breve del trabajo realizado.</p>
-            <img src="trabajo2-img1.jpg" alt="Trabajo 2 - Imagen 1" class="img-editable"> <!-- Primera imagen del trabajo 2 -->
+    <!-- Servicios con carrusel -->
+    <section id="servicios">
+        <h2>Servicios</h2> <!-- Título centrado -->
+        <div class="servicios-content">
+            <img src="servicio-img.jpg" alt="Imagen de servicios" class="servicio-img"> <!-- Imagen estática -->
+            <div class="carrusel">
+                <img src="carrusel-img1.jpg" alt="Servicio 1">
+                <div class="carrusel-controls">
+                    <button class="prev" onclick="prevSlide()">&#10094;</button>
+                    <div class="carrusel-info">1/10</div> <!-- Información de la imagen actual -->
+                    <button class="next" onclick="nextSlide()">&#10095;</button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Ubicación con foto -->
-    <section id="ubicacion">
-        <h2>Ubicación</h2>
-        <img src="ubicacion-img.jpg" alt="Foto de la ubicación" class="img-editable"> <!-- Foto de la ubicación -->
+    <!-- Nosotros -->
+    <section id="nosotros">
+        <h2>Nosotros</h2>
+        <img src="tu-imagen.jpg" alt="Foto de Nosotros"> <!-- Imagen grande de nosotros -->
     </section>
 
-    <!-- Zona de Cobertura con foto -->
-    <section id="zona-cobertura">
-        <h2>Zona de Cobertura</h2>
-        <img src="zona-cobertura-img.jpg" alt="Foto de la zona de cobertura" class="img-editable"> <!-- Foto de la zona de cobertura -->
+    <!-- Comentarios -->
+    <section id="comentarios">
+        <h2>Comentarios</h2>
+        <form action="procesar_comentario.php" method="POST">
+            <input type="text" name="nombre" placeholder="Tu nombre">
+            <textarea name="comentario" placeholder="Escribe tu comentario"></textarea>
+            <button type="submit">Enviar Comentario</button>
+        </form>
+        <div class="comentarios">
+            <div class="comentario">
+                <p>"Excelente servicio y atención." - Cliente 1</p>
+            </div>
+            <div class="comentario">
+                <p>"Muy satisfecho con el trabajo realizado." - Cliente 2</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Sección de contacto con botón de WhatsApp -->
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>¿Tienes alguna pregunta? ¡Contáctame por WhatsApp!</p>
-        <a href="https://wa.me/tu-numero" target="_blank" class="btn-whatsapp">Enviar Mensaje por WhatsApp</a> <!-- Botón para contacto por WhatsApp -->
-    </section>
+    <!-- Botón flotante de WhatsApp -->
+    <div class="whatsapp-float" onclick="window.open('https://wa.me/tu-numero?text=Hola!%20Estoy%20interesado%20en%20sus%20servicios', '_blank')">
+        <img src="whatsapp-logo.png" alt="WhatsApp">
+    </div>
 
-    <footer>
-        <p>&copy; 2024. Todos los derechos reservados.</p>
-    </footer>
+    <script>
+        let slideIndex = 0;
+        const slides = ['carrusel-img1.jpg', 'carrusel-img2.jpg', 'carrusel-img3.jpg', 'carrusel-img4.jpg', 'carrusel-img5.jpg', 'carrusel-img6.jpg', 'carrusel-img7.jpg', 'carrusel-img8.jpg', 'carrusel-img9.jpg', 'carrusel-img10.jpg'];
+        const carruselImage = document.querySelector('.carrusel img');
+        const carruselInfo = document.querySelector('.carrusel-info');
+
+        function showSlide(index) {
+            carruselImage.src = slides[index];
+            carruselInfo.textContent = `${index + 1}/10`;
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        setInterval(nextSlide, 5000); // Cambia de imagen cada 5 segundos
+    </script>
 
 </body>
 </html>
+
 
