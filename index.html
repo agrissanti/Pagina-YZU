@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Eléctricos</title>
+    <title>Electricidad YZU</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -84,25 +84,55 @@
 
         .servicios-content {
             display: flex;
-            align-items: center;
-            justify-content: center;
             flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 30px;
         }
 
-        .servicio-img {
-            width: auto;
-            height: auto;
-            max-width: 500px;
-            border-radius: 8px;
-            margin-right: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        .servicios-lista {
+            background-color: white; /* Fondo blanco */
+            padding: 20px;
+            border-radius: 10px;
+            width: 45%;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            color: #333; /* Texto en negro */
+        }
+
+        .servicios-lista h3 {
+            background-color: #FF8C00; /* Cabecera naranja */
+            color: white;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            margin: 0;
+        }
+
+        .servicios-lista ul {
+            list-style: none;
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .servicios-lista ul li {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .servicios-lista ul li::before {
+            content: "•"; /* Punto grande */
+            font-size: 1.2em;
+            color: #002244; /* Color azul */
+            margin-right: 8px;
         }
 
         .carrusel {
-            max-width: 500px;
+            max-width: 45%;
             width: 100%;
             position: relative;
             text-align: center;
+            align-self: center;
         }
 
         .carrusel img {
@@ -135,17 +165,75 @@
         }
 
         /* Sección de Nosotros */
-        #nosotros img {
-            width: 100%;
-            max-width: 1200px;
+       #nosotros {
+            padding: 40px 20px;
+            background-color: #fff;
+            border-top: 5px solid #FF8C00;
+            border-bottom: 5px solid #FF8C00;
+            text-align: center;
+            color: #002244;
+        }
+
+        #nosotros h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        #nosotros .nosotros-content p {
+            font-size: 1em;
+            margin-bottom: 30px;
+        }
+
+        .nosotros-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .feature {
+            text-align: center;
+            font-size: 0.9em;
+            color: #002244;
+        }
+
+        .feature .icon {
+            font-size: 2em;
+            color: #002244;
+        }
+
+
+        /* Sección de Cobertura */
+        #cobertura h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #002244;
+            text-align: center;
+        }
+
+        #cobertura img {
+            width: 80%;
             height: auto;
-            margin: 20px auto;
-            display: block;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
+        #cobertura figcaption {
+            font-size: 1em;
+            color: #555;
+            margin-top: 10px;
+            text-align: center;
+        }
+
         /* Sección de Comentarios */
+        #comentarios h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #002244;
+            text-align: center;
+        }
+
         #comentarios form input[type="text"], #comentarios form textarea {
             width: 80%;
             padding: 10px;
@@ -209,8 +297,13 @@
                 flex-direction: column;
             }
 
-            .servicio-img, .carrusel {
+            .servicios-lista, .carrusel {
                 max-width: 100%;
+                width: 100%;
+            }
+
+            #cobertura img {
+                width: 90%;
             }
         }
 
@@ -238,26 +331,56 @@
         <img src="imagen-principal.jpg" alt="Imagen principal de la empresa" class="img-editable"> <!-- Imagen principal -->
     </section>
 
-    <!-- Servicios con carrusel -->
+    <!-- Servicios con cuadro de fondo blanco y lista separada por puntitos -->
     <section id="servicios">
-        <h2>Servicios</h2> <!-- Título centrado -->
+        <h2>Servicios</h2>
         <div class="servicios-content">
-            <img src="servicio-img.jpg" alt="Imagen de servicios" class="servicio-img"> <!-- Imagen estática -->
+            <div class="servicios-lista">
+                <h3>Lista de Servicios</h3>
+                <ul>
+                    <li>Instalación de sistemas eléctricos</li>
+                    <li>Mantenimiento preventivo y correctivo</li>
+                    <li>Reparación de cortocircuitos</li>
+                    <li>Diagnóstico y resolución de fallas</li>
+                    <li>Instalación de iluminación</li>
+                    <li>Renovación de tableros eléctricos</li>
+                    <li>Instalación de interruptores de circuito</li>
+                    <li>Revisión de instalaciones industriales</li>
+                    <li>Cableado estructurado</li>
+                    <li>Soporte técnico remoto</li>
+                </ul>
+            </div>
             <div class="carrusel">
                 <img src="carrusel-img1.jpg" alt="Servicio 1">
                 <div class="carrusel-controls">
                     <button class="prev" onclick="prevSlide()">&#10094;</button>
-                    <div class="carrusel-info">1/10</div> <!-- Información de la imagen actual -->
+                    <div class="carrusel-info">1/10</div>
                     <button class="next" onclick="nextSlide()">&#10095;</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Nosotros -->
+    <!-- Sección Nosotros -->
     <section id="nosotros">
-        <h2>Nosotros</h2>
-        <img src="tu-imagen.jpg" alt="Foto de Nosotros"> <!-- Imagen grande de nosotros -->
+        <h2>YZU ELECTRICIDAD INDUSTRIAL</h2>
+        <div class="nosotros-content">
+            <p>Adrian Yzurieta. Electricista profesional a su servicio, con más de 15 años de experiencia, altamente capacitado para resolver cualquier problema en su hogar o comercio.</p>
+            <div class="nosotros-features">
+                <div class="feature">
+                    <div class="icon">💲</div>
+                    <p>Precios accesibles<br>por adelantado</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">⚡</div>
+                    <p>Trabajos rápidos y<br>garantizados</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">🏠</div>
+                    <p>Atendemos hogares<br>y comercios</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Comentarios -->
