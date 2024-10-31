@@ -409,7 +409,7 @@
     </div>
 
     <!-- Script para manejar el formulario -->
-      <form target="_blank" action="https://formsubmit.co/agrrissanti@gmail.com" method="POST">
+      <form target="_blank" action="https://formsubmit.co/agrissanti@gmail.com" method="POST">
     <div class="form-group">
       <div class="form-row">
         <div class="col">
@@ -425,47 +425,7 @@
     </div>
     <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
   </form>
-            if (!comentario) {
-                showError();
-                return;
-            }
-
-            const formData = new FormData(form);
-            formData.append("_subject", "COMENTARIO DE PAGINA"); // Agrega el asunto
-
-            fetch("https://formsubmit.co/ajax/agrissanti@gmail.com", {
-                method: "POST",
-                headers: { 'Accept': 'application/json' },
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    showConfirmation();
-                    form.reset();
-                }
-            })
-            .catch(error => console.error("Error:", error));
-        });
-
-        function showConfirmation() {
-            const confirmationBox = document.getElementById("confirmationBox");
-            confirmationBox.style.display = "block";
-
-            setTimeout(() => {
-                confirmationBox.style.display = "none";
-            }, 3000); // 3 segundos
-        }
-
-        function showError() {
-            const errorBox = document.getElementById("errorBox");
-            errorBox.style.display = "block";
-
-            setTimeout(() => {
-                errorBox.style.display = "none";
-            }, 3000); // 3 segundos
-        }
-
+            
     <!-- Botón flotante de WhatsApp -->
     <div class="whatsapp-float" onclick="window.open('https://wa.me/tu-numero?text=Hola!%20Estoy%20interesado%20en%20sus%20servicios', '_blank')">
         <img src="whatsapp-logo.png" alt="WhatsApp">
