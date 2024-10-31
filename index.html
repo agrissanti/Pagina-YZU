@@ -391,25 +391,7 @@
     </section>
 
   <!-- Sección de comentarios -->
-    <section id="comentarios">
-        <h2>Comentarios</h2>
-        <form id="comment-form">
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <textarea name="comentario" placeholder="Escribe tu comentario" required></textarea>
-            <button type="submit">Enviar Comentario</button>
-        </form>
-    </section>
-
-    <!-- Cuadro de confirmación y error -->
-    <div class="confirmation-box" id="confirmationBox">
-        ¡Comentario enviado con éxito!
-    </div>
-    <div class="error-box" id="errorBox">
-        ¡Error! Debes escribir un comentario.
-    </div>
-
-    <!-- Script para manejar el formulario -->
-      <form target="_blank" action="https://formsubmit.co/agrissanti@gmail.com" method="POST">
+  <form target="_blank" action="https://formsubmit.co/agrissanti@gmail.com" method="POST">
     <div class="form-group">
       <div class="form-row">
         <div class="col">
@@ -425,7 +407,15 @@
     </div>
     <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
   </form>
-            
+
+    <!-- Cuadro de confirmación y error -->
+    <div class="confirmation-box" id="confirmationBox">
+        ¡Comentario enviado con éxito!
+    </div>
+    <div class="error-box" id="errorBox">
+        ¡Error! Debes escribir un comentario.
+    </div>
+    
     <!-- Botón flotante de WhatsApp -->
     <div class="whatsapp-float" onclick="window.open('https://wa.me/tu-numero?text=Hola!%20Estoy%20interesado%20en%20sus%20servicios', '_blank')">
         <img src="whatsapp-logo.png" alt="WhatsApp">
