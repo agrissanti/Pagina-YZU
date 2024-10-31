@@ -409,13 +409,22 @@
     </div>
 
     <!-- Script para manejar el formulario -->
-    <script>
-        document.getElementById("comment-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const form = event.target;
-            const comentario = form.querySelector("textarea[name='comentario']").value.trim();
-
+      <form target="_blank" action="https://formsubmit.co/agrrissanti@gmail.com" method="POST">
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+        </div>
+        <div class="col">
+          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+  </form>
             if (!comentario) {
                 showError();
                 return;
@@ -488,5 +497,4 @@
 
 </body>
 </html>
-
 
