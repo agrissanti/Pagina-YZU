@@ -165,23 +165,14 @@
         }
 
         /* Sección de Nosotros */
-       #nosotros {
-            padding: 40px 20px;
-            background-color: #fff;
-            border-top: 5px solid #FF8C00;
-            border-bottom: 5px solid #FF8C00;
-            text-align: center;
-            color: #002244;
-        }
-
-        #nosotros h2 {
+       #nosotros h2 {
             font-size: 2em;
             font-weight: 700;
             margin-bottom: 10px;
         }
 
         #nosotros .nosotros-content p {
-            font-size: 1em;
+            font-size: 1.2em;
             margin-bottom: 30px;
         }
 
@@ -194,36 +185,45 @@
 
         .feature {
             text-align: center;
-            font-size: 0.9em;
+            font-size: 1.3em;
             color: #002244;
         }
 
         .feature .icon {
-            font-size: 2em;
+            font-size: 3em;
             color: #002244;
         }
 
 
-        /* Sección de Cobertura */
-        #cobertura h2 {
+           
+        /* Sección Nosotros */
+        #nosotros h2 {
             font-size: 2em;
-            margin-bottom: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        #nosotros .nosotros-content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .nosotros-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .feature {
+            text-align: center;
+            font-size: 1.3em; /* Aumenta el tamaño de la fuente */
             color: #002244;
-            text-align: center;
         }
 
-        #cobertura img {
-            width: 80%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #cobertura figcaption {
-            font-size: 1em;
-            color: #555;
-            margin-top: 10px;
-            text-align: center;
+        .feature .icon {
+            font-size: 3em; /* Aumenta el tamaño del emoji */
+            color: #002244;
         }
 
         /* Sección de Comentarios */
@@ -245,19 +245,26 @@
             margin: 5px auto;
         }
 
-        .comentarios {
-            background-color: #f9f9f9;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
+        /* Cuadro de confirmación y error */
+        .confirmation-box, .error-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            font-size: 1rem;
+            z-index: 1000;
         }
 
-        .comentarios .comentario {
-            background-color: #fff;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .confirmation-box {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .error-box {
+            background-color: #dc3545;
+            color: white;
         }
 
         /* Botón flotante de WhatsApp */
@@ -383,35 +390,75 @@
         </div>
     </section>
 
-<!-- Cobertura -->
-    <section id="cobertura">
-        <h2>Cobertura</h2>
-        <figure>
-            <img src="cobertura-imagen.jpg" alt="Cobertura geográfica de los servicios">
-            <figcaption>Cobertura geográfica donde brindamos nuestros servicios.</figcaption>
-        </figure>
-    </section>
-
-    <!-- Comentarios -->
+  <!-- Sección de comentarios -->
     <section id="comentarios">
         <h2>Comentarios</h2>
-        <form action="procesar_comentario.php" method="POST">
-            <input type="text" name="nombre" placeholder="Tu nombre">
-            <textarea name="comentario" placeholder="Escribe tu comentario"></textarea>
+        <form id="comment-form">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <textarea name="comentario" placeholder="Escribe tu comentario" required></textarea>
             <button type="submit">Enviar Comentario</button>
         </form>
-        <div class="comentarios">
-            <div class="comentario">
-                <p>"Excelente servicio y atención." - Cliente 1</p>
-            </div>
-            <div class="comentario">
-                <p>"Muy satisfecho con el trabajo realizado." - Cliente 2</p>
-            </div>
-        </div>
     </section>
 
+    <!-- Cuadro de confirmación y error -->
+    <div class="confirmation-box" id="confirmationBox">
+        ¡Comentario enviado con éxito!
+    </div>
+    <div class="error-box" id="errorBox">
+        ¡Error! Debes escribir un comentario.
+    </div>
+
+    <!-- Script para manejar el formulario -->
+    <script>
+        document.getElementById("comment-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const comentario = form.querySelector("textarea[name='comentario']").value.trim();
+
+            if (!comentario) {
+                showError();
+                return;
+            }
+
+            const formData = new FormData(form);
+            formData.append("_subject", "COMENTARIO DE PAGINA"); // Agrega el asunto
+
+            fetch("https://formsubmit.co/ajax/agrissanti@gmail.com", {
+                method: "POST",
+                headers: { 'Accept': 'application/json' },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showConfirmation();
+                    form.reset();
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+
+        function showConfirmation() {
+            const confirmationBox = document.getElementById("confirmationBox");
+            confirmationBox.style.display = "block";
+
+            setTimeout(() => {
+                confirmationBox.style.display = "none";
+            }, 3000); // 3 segundos
+        }
+
+        function showError() {
+            const errorBox = document.getElementById("errorBox");
+            errorBox.style.display = "block";
+
+            setTimeout(() => {
+                errorBox.style.display = "none";
+            }, 3000); // 3 segundos
+        }
+
     <!-- Botón flotante de WhatsApp -->
-    <div class="whatsapp-float" onclick="window.open('https://wa.me/+542213607770?text=Hola!%20Estoy%20interesado%20en%20sus%20servicios', '_blank')">
+    <div class="whatsapp-float" onclick="window.open('https://wa.me/tu-numero?text=Hola!%20Estoy%20interesado%20en%20sus%20servicios', '_blank')">
         <img src="whatsapp-logo.png" alt="WhatsApp">
     </div>
 
@@ -423,7 +470,7 @@
 
         function showSlide(index) {
             carruselImage.src = slides[index];
-            carruselInfo.textContent = `${index + 1}/10`;
+            carruselInfo.textContent = ${index + 1}/10;
         }
 
         function nextSlide() {
@@ -436,7 +483,7 @@
             showSlide(slideIndex);
         }
 
-        setInterval(nextSlide, 3000); // Cambia de imagen cada 3 segundos
+        setInterval(nextSlide, 5000); // Cambia de imagen cada 5 segundos
     </script>
 
 </body>
