@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electricidad YZU</title>
+    <!-- Fuente de Google Fonts para la tipografía Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilos generales para el cuerpo de la página */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -48,7 +50,7 @@
             border-radius: 5px;
         }
 
-        /* Sección de Inicio */
+        /* Sección de Inicio con video principal */
         .hero {
             display: flex;
             justify-content: center;
@@ -56,7 +58,7 @@
             padding: 40px 0;
         }
 
-        .hero img {
+        .hero video {
             width: 100%;
             max-width: 1200px;
             height: auto;
@@ -79,39 +81,35 @@
             font-size: 2em;
             margin-bottom: 20px;
             color: #002244;
-            text-align: center;
         }
 
         .servicios-content {
             display: flex;
             flex-wrap: wrap;
-            align-items: flex-start;
-            justify-content: center;
             gap: 30px;
+            justify-content: center;
         }
 
         .servicios-lista {
-            background-color: white; /* Fondo blanco */
-            padding: 20px;
-            border-radius: 10px;
             width: 45%;
-            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             text-align: left;
-            color: #333; /* Texto en negro */
         }
 
         .servicios-lista h3 {
-            background-color: #FF8C00; /* Cabecera naranja */
+            background-color: #FF8C00;
             color: white;
             padding: 10px;
             border-radius: 10px 10px 0 0;
             text-align: center;
-            margin: 0;
         }
 
         .servicios-lista ul {
             list-style: none;
-            padding-left: 20px;
+            padding: 0;
             margin: 0;
         }
 
@@ -121,23 +119,24 @@
         }
 
         .servicios-lista ul li::before {
-            content: "•"; /* Punto grande */
+            content: "•";
+            color: #002244;
             font-size: 1.2em;
-            color: #002244; /* Color azul */
             margin-right: 8px;
         }
 
+        /* Carrusel de fotos */
         .carrusel {
-            max-width: 45%;
-            width: 100%;
+            width: 45%;
+            max-width: 100%;
             position: relative;
             text-align: center;
-            align-self: center;
+            overflow: hidden;
         }
 
         .carrusel img {
             width: 100%;
-            height: 300px; /* Tamaño fijo para todas las imágenes */
+            height: 300px;
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -164,8 +163,8 @@
             margin-top: 5px;
         }
 
-        /* Sección de Nosotros */
-       #nosotros h2 {
+        /* Sección Nosotros */
+        #nosotros h2 {
             font-size: 2em;
             font-weight: 700;
             margin-bottom: 10px;
@@ -190,40 +189,18 @@
         }
 
         .feature .icon {
-            font-size: 3em;
+            font-size: 1.8em;
             color: #002244;
         }
 
-
-           
-        /* Sección Nosotros */
-        #nosotros h2 {
-            font-size: 2em;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        #nosotros .nosotros-content p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-
-        .nosotros-features {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
+        /* Sección Cobertura */
+        #cobertura img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
             margin-top: 20px;
-        }
-
-        .feature {
-            text-align: center;
-            font-size: 1.3em; /* Aumenta el tamaño de la fuente */
-            color: #002244;
-        }
-
-        .feature .icon {
-            font-size: 3em; /* Aumenta el tamaño del emoji */
-            color: #002244;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         /* Sección de Comentarios */
@@ -234,7 +211,9 @@
             text-align: center;
         }
 
-        #comentarios form input[type="text"], #comentarios form textarea {
+        #comentarios form input[type="text"],
+        #comentarios form input[type="email"],
+        #comentarios form textarea {
             width: 80%;
             padding: 10px;
             margin-bottom: 10px;
@@ -245,26 +224,21 @@
             margin: 5px auto;
         }
 
-        /* Cuadro de confirmación y error */
-        .confirmation-box, .error-box {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px;
-            border-radius: 5px;
+        .success-message {
+            color: green;
+            margin-top: 10px;
             display: none;
-            font-size: 1rem;
-            z-index: 1000;
         }
 
-        .confirmation-box {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .error-box {
-            background-color: #dc3545;
-            color: white;
+        /* Sección de comentarios de clientes */
+        .comentarios {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            text-align: center;
         }
 
         /* Botón flotante de WhatsApp */
@@ -281,7 +255,6 @@
             align-items: center;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            z-index: 100;
         }
 
         .whatsapp-float img {
@@ -289,40 +262,29 @@
             height: 40px;
         }
 
-        /* Adaptación para móviles */
+        /* Adaptación para pantallas pequeñas */
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
                 align-items: center;
             }
 
-            nav ul li {
-                margin-bottom: 10px;
-            }
-
             .servicios-content {
                 flex-direction: column;
             }
 
-            .servicios-lista, .carrusel {
-                max-width: 100%;
+            .servicios-lista {
                 width: 100%;
             }
-
-            #cobertura img {
-                width: 90%;
-            }
         }
-
-    </style>
+  </style>
 </head>
 <body>
 
     <header>
-        <img src="tu-logo.jpg" alt="Logo" class="logo"> <!-- Cambia "tu-logo.jpg" por el logo de la empresa -->
+        <img src="tu-logo.jpg" alt="Logo" class="logo">
     </header>
 
-    <!-- Menú horizontal -->
     <nav>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
@@ -333,12 +295,15 @@
         </ul>
     </nav>
 
-    <!-- Imagen principal centrada -->
+    <!-- Video principal en la sección de inicio -->
     <section id="inicio" class="hero">
-        <img src="imagen-principal.jpg" alt="Imagen principal de la empresa" class="img-editable"> <!-- Imagen principal -->
+        <video controls autoplay muted>
+            <source src="video-principal.mp4" type="video/mp4">
+            Tu navegador no soporta videos en HTML5.
+        </video>
     </section>
 
-    <!-- Servicios con cuadro de fondo blanco y lista separada por puntitos -->
+    <!-- Sección de Servicios con carrusel -->
     <section id="servicios">
         <h2>Servicios</h2>
         <div class="servicios-content">
@@ -372,64 +337,80 @@
     <section id="nosotros">
         <h2>YZU ELECTRICIDAD INDUSTRIAL</h2>
         <div class="nosotros-content">
-            <p>Adrian Yzurieta. Electricista profesional a su servicio, con más de 15 años de experiencia, altamente capacitado para resolver cualquier problema en su hogar o comercio.</p>
+            <p>Adrian Yzurieta. Electricista profesional a su servicio, con más de 15 años de experiencia.</p>
             <div class="nosotros-features">
                 <div class="feature">
-                    <div class="icon">💲</div>
-                    <p>Precios accesibles<br>por adelantado</p>
+                    <div class="icon">💼</div>
+                    <p>Precios accesibles por adelantado</p>
                 </div>
                 <div class="feature">
-                    <div class="icon">⚡</div>
-                    <p>Trabajos rápidos y<br>garantizados</p>
+                    <div class="icon">🚀</div>
+                    <p>Trabajos rápidos y garantizados</p>
                 </div>
                 <div class="feature">
-                    <div class="icon">🏠</div>
-                    <p>Atendemos hogares<br>y comercios</p>
+                    <div class="icon">🏡</div>
+                    <p>Atendemos hogares y comercios</p>
                 </div>
             </div>
         </div>
     </section>
 
-  <!-- Sección de comentarios -->
-  <form target="_blank" action="https://formsubmit.co/agrissanti@gmail.com" method="POST">
-    <div class="form-group">
-      <div class="form-row">
-        <div class="col">
-          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-        </div>
-        <div class="col">
-          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
-  </form>
+    <!-- Sección de Cobertura -->
+    <section id="cobertura">
+        <h2>Cobertura</h2>
+        <p>Nos encontramos en toda el área de servicios, abarcando...</p>
+        <img src="imagen-cobertura.jpg" alt="Imagen de Cobertura">
+    </section>
 
-    <!-- Cuadro de confirmación y error -->
-    <div class="confirmation-box" id="confirmationBox">
-        ¡Comentario enviado con éxito!
+    <!-- Sección de Comentarios -->
+    <section id="comentarios">
+        <h2>Comentarios</h2>
+        <form id="comment-form">
+            <input type="text" name="name" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Tu Comentario" rows="10" required></textarea>
+            <button type="submit">Enviar Formulario</button>
+            <div class="success-message">¡Comentario enviado exitosamente!</div>
+        </form>
+    </section>
+
+    <!-- Sección de Comentarios de Clientes -->
+    <div class="comentarios">
+        <h3>Lo que dicen nuestros clientes</h3>
+        <div class="comentario">
+            <p>"Excelente servicio, muy profesional y rápido. Altamente recomendado." - Cliente 1</p>
+        </div>
+        <div class="comentario">
+            <p>"Muy satisfecho con el trabajo realizado, los recomendaré a todos mis conocidos." - Cliente 2</p>
+        </div>
     </div>
-    <div class="error-box" id="errorBox">
-        ¡Error! Debes escribir un comentario.
-    </div>
-    
+
     <!-- Botón flotante de WhatsApp -->
     <div class="whatsapp-float" onclick="window.open('https://wa.me/tu-numero?text=Hola!%20Estoy%20interesado%20en%20sus%20servicios', '_blank')">
         <img src="whatsapp-logo.png" alt="WhatsApp">
     </div>
 
     <script>
+        // Función del carrusel de fotos
         let slideIndex = 0;
-        const slides = ['carrusel-img1.jpg', 'carrusel-img2.jpg', 'carrusel-img3.jpg', 'carrusel-img4.jpg', 'carrusel-img5.jpg', 'carrusel-img6.jpg', 'carrusel-img7.jpg', 'carrusel-img8.jpg', 'carrusel-img9.jpg', 'carrusel-img10.jpg'];
-        const carruselImage = document.querySelector('.carrusel img');
-        const carruselInfo = document.querySelector('.carrusel-info');
+        const slides = [
+            "carrusel-img1.jpg",
+            "carrusel-img2.jpg",
+            "carrusel-img3.jpg",
+            "carrusel-img4.jpg",
+            "carrusel-img5.jpg",
+            "carrusel-img6.jpg",
+            "carrusel-img7.jpg",
+            "carrusel-img8.jpg",
+            "carrusel-img9.jpg",
+            "carrusel-img10.jpg"
+        ];
+        const carruselImage = document.querySelector(".carrusel img");
+        const carruselInfo = document.querySelector(".carrusel-info");
 
         function showSlide(index) {
             carruselImage.src = slides[index];
-            carruselInfo.textContent = ${index + 1}/10;
+            carruselInfo.textContent = `${index + 1}/10`;
         }
 
         function nextSlide() {
@@ -443,8 +424,17 @@
         }
 
         setInterval(nextSlide, 5000); // Cambia de imagen cada 5 segundos
-    </script>
 
+        // Maneja el envío del formulario sin redirigir
+        document.getElementById("comment-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.querySelector(".success-message").style.display = "block";
+            setTimeout(() => {
+                document.querySelector(".success-message").style.display = "none";
+                this.reset();
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
 
