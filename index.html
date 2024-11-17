@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electricidad YZU</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="tu-imagen.png">
     <!-- Fuente de Google Fonts para la tipografía Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Estilos para Leaflet -->
@@ -22,13 +24,13 @@
         header {
             background-color: #002244;
             color: white;
-            padding: 20px;
+            padding: 10px 0;
             text-align: center;
         }
 
         nav {
             background-color: #FF8C00;
-            padding: 15px 0;
+            padding: 10px 0;
             display: flex;
             justify-content: center;
         }
@@ -38,6 +40,7 @@
             padding: 0;
             margin: 0;
             display: flex;
+            flex-wrap: wrap;
         }
 
         nav ul li {
@@ -52,11 +55,34 @@
             border-radius: 5px;
         }
 
+        /* Espacio entre el menú y la sección principal */
+        .spacer {
+            height: 20px;
+        }
+
+        /* Estilo general para secciones */
+        section {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            padding: 40px 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Imagen de inicio */
+        .hero img {
+            width: 100%;
+            border-radius: 8px;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
         /* Servicios */
         #servicios h2 {
             font-size: 2em;
-            margin-bottom: 20px;
             color: #002244;
+            margin-bottom: 20px;
         }
 
         .servicios-content {
@@ -67,7 +93,7 @@
             align-items: flex-start;
         }
 
-        .servicios-lista {
+        .servicios-lista, .carrusel {
             flex: 1;
             min-width: 280px;
             max-width: 45%;
@@ -106,16 +132,6 @@
         }
 
         /* Carrusel de fotos */
-        .carrusel {
-            flex: 1;
-            min-width: 280px;
-            max-width: 45%;
-            position: relative;
-            text-align: center;
-            overflow: hidden;
-            margin: 0 auto;
-        }
-
         .carrusel img {
             width: 100%;
             height: 330px;
@@ -179,16 +195,6 @@
             margin-bottom: 10px;
         }
 
-        /* Estilo general para secciones */
-        section {
-            max-width: 1200px;
-            margin: 0 auto 30px;
-            padding: 40px 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
         /* Estilos específicos para el mapa */
         #map {
             width: 100%;
@@ -196,39 +202,153 @@
             border-radius: 8px;
         }
 
-       
-        /* Botones flotantes de WhatsApp e Instagram */
+         /* Botones flotantes personalizados */
+    .whatsapp-float {
+        position: fixed; /* Siempre visible */
+        bottom: 20px; /* Posición inferior */
+        right: 20px; /* Espaciado desde la derecha */
+        width: 50px; /* Tamaño del botón */
+        height: 50px;
+        border-radius: 50%; /* Forma circular */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 10000; /* Encima de todo */
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+.instagram-float {
+        position: fixed; /* Siempre visible */
+        bottom: 90px; /* Posición inferior */
+        right: 20px; /* Espaciado desde la derecha */
+        width: 50px; /* Tamaño del botón */
+        height: 50px;
+        border-radius: 50%; /* Forma circular */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 10000; /* Encima de todo */
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    /* Botón de WhatsApp - verde */
+    .whatsapp-float {
+        background-color: #4CAF50; /* Verde */
+    }
+
+     /* Botón de WhatsApp - verde */
+    .whatsapp-float {
+        background-color: #4CAF50; /* Verde */
+        margin-bottom: 10px; /* Espaciado entre botones */
+    }
+
+    /* Botón de Instagram - violeta */
+    .instagram-float {
+        background-color: #9C27B0; /* Violeta */
+    }
+
+    /* Hover para los botones */
+    .whatsapp-float:hover {
+        transform: scale(1.1); /* Pequeño zoom */
+        background-color: #45a049; /* Verde más oscuro */
+    }
+
+    .instagram-float:hover {
+        transform: scale(1.1);
+        background-color: #7B1FA2; /* Violeta más oscuro */
+    }
+
+    /* Iconos dentro de los botones */
+    .whatsapp-float img, .instagram-float img {
+        width: 30px; /* Tamaño del ícono */
+        height: 30px;
+    }
+    /* Ajustes para pantallas pequeñas */
+    @media (max-width: 480px) {
         .whatsapp-float, .instagram-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            z-index: 100;
-        }
-
-        .instagram-float {
-            background-color: #C13584; /* Color violeta claro para Instagram */
-            bottom: 90px; /* Posición encima del botón de WhatsApp */
-        }
-
-        .instagram-float img, .whatsapp-float img {
-            width: 40px;
+            width: 40px; /* Botones más pequeños en móviles */
             height: 40px;
         }
 
-        .whatsapp-float {
-            background-color: #25D366;
+        .whatsapp-float img, .instagram-float img {
+            width: 25px; /* Íconos más pequeños */
+            height: 25px;
+        }
+    }
+
+   /* Estilos responsivos adicionales */
+    @media (max-width: 1024px) {
+        section {
+            padding: 30px 15px;
         }
 
-    </style>
+        .feature {
+            max-width: 45%;
+        }
+    }
 
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 1.8em;
+        }
+
+        nav ul li {
+            margin: 5px 0;
+        }
+
+        .servicios-content, .nosotros-content {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .servicios-lista, .carrusel {
+            max-width: 100%;
+        }
+
+        .feature {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        body {
+            font-size: 0.9em;
+        }
+
+        nav ul li a {
+            font-size: 0.9em;
+            padding: 8px 10px;
+        }
+
+        .carrusel img {
+            height: 200px;
+        }
+
+        .whatsapp-float, .instagram-float {
+            width: 50px;
+            height: 50px;
+        }
+
+        .whatsapp-float img, .instagram-float img {
+            width: 30px;
+            height: 30px;
+        }
+        }
+</style>
+
+<!-- Botón flotante de Instagram -->
+<div class="instagram-float" onclick="window.open('https://www.instagram.com/tu-instagram', '_blank')">
+    <img src="instagram-logo.png" alt="Instagram">
+</div>
+
+<!-- Botón flotante de WhatsApp -->
+<div class="whatsapp-float" onclick="window.open('https://wa.me/tu-numero?text=Hola!%20Estoy%20interesado%20en%20sus%20servicios', '_blank')">
+    <img src="whatsapp-logo.png" alt="WhatsApp">
+</div>
+ 
 </head>
 <body>
 
@@ -245,13 +365,14 @@
         </ul>
     </nav>
 
-    <!-- Video principal en la sección de inicio -->
+    <!-- Espacio entre el menú y la sección principal -->
+    <div class="spacer"></div>
+
+    <!-- Imagen principal en la sección de inicio -->
     <section id="inicio" class="hero">
-        <video autoplay muted loop>
-            <source src="video-principal.mp4" type="video/mp4">
-            Tu navegador no soporta videos en HTML5.
-        </video>
+        <img src="imagen-principal.jpg" alt="Imagen principal de la empresa">
     </section>
+
 
     <!-- Sección de Servicios con carrusel -->
     <section id="servicios">
@@ -280,7 +401,8 @@
             </div>
         </div>
     </section>
-           <!-- Script del carrusel de fotos -->
+
+    <!-- Script del carrusel de fotos -->
     <script>
         const slides = [
             "carrusel-img1.jpg",
@@ -316,17 +438,14 @@
         setInterval(nextSlide, 3000); // Cambia de imagen cada 3 segundos
     </script>
 
-
     <!-- Sección Nosotros -->
     <section id="nosotros">
         <h2>YZU ELECTRICIDAD INDUSTRIAL</h2>
-
-<p>Adrian Yzurieta. Electricista profesional a su servicio, con mas de 15 años de experiencia, altamente capacitado para resolver cualquier problema en su hogar o comercio.</p>
-
+        <p>Adrian Yzurieta. Electricista profesional a su servicio, con mas de 15 años de experiencia, altamente capacitado para resolver cualquier problema en su hogar o comercio.</p>
         <div class="nosotros-content">
             <div class="feature">
                 <div class="icon">💼</div>
-                <p>Precios accesibles por adelantado</p>
+                <p>Presupuestos accesibles y por adelantado</p>
             </div>
             <div class="feature">
                 <div class="icon">🚀</div>
@@ -343,22 +462,18 @@
     <section id="cobertura">
         <h2>Cobertura</h2>
         <div id="map"></div>
-        <p>Si su ubicacion no aparece en el mapa consultenos por Whatsapp.</p>
+        <p>Si su ubicación no aparece en el mapa, consúltenos por WhatsApp.</p>
     </section>
 
     <!-- Script para Leaflet -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-        // Inicializa el mapa centrado en Plaza Moreno, La Plata con un zoom menor para ver todo el círculo
         var map = L.map('map').setView([-34.9214, -57.9545], 12);
-
-        // Carga los tiles del mapa desde OpenStreetMap
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
             attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // Añade un círculo azul semitransparente con un radio de 5 km
         L.circle([-34.9214, -57.9545], {
             color: 'blue',
             fillColor: 'blue',
@@ -379,4 +494,5 @@
 
 </body>
 </html>
+
 
